@@ -1,8 +1,9 @@
 function sum(a, b) {
-    if (typeof a !== "number" || typeof b !== "number") {
-        throw new TypeError('only type number allowed');
-    }
-    return a + b;
+  if ([a, b].some((value) => typeof value !== 'number')) {
+    throw new TypeError();
+  }
+
+  return a + b;
 }
 
 module.exports = sum;
